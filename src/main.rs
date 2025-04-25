@@ -3,23 +3,28 @@ const VERSION: &str = "0.1.0";
 fn main() {
     let args:Vec<String> = std::env::args().collect();
 
-    for arg in &args{
+    
         if args.len() == 1 {
             println!("csm {VERSION}");
             println!("toolchain for csm programming language.");
             println!("for more info:\n csm --help");
         }else if args.len() == 2 {
-            if arg == "--version" || arg == "-v" {
+            if &args[1] == "--version" || &args[1] == "-v" {
                 println!("csm {VERSION}");
-            }else if arg == "--help" || arg == "-h" {
+            }else if &args[1] == "--help" || &args[1] == "-h" {
                 println!("csm commands:");
-                println!(" 1. csm <no args>                 -> prints about message.");
-                println!(" 2. csm --version                 -> prints csm version.");
-                println!(" 3. csm --help                    -> prints this commands list.");
-                println!(" 4. csm main.csm -o <output-name> -> compiles to single exe binary with output name.");        
-                println!(" 5. csm init                      -> initializes a new project in current directory.");
-                println!(" 6. csm run                       -> run current directory(project).");
+                println!(" 1. csm <no args>                          -> prints about message.");
+                println!(" 2. csm --version                          -> prints csm version.");
+                println!(" 3. csm --help                             -> prints this commands list.");
+                println!(" 4. csm <filename.csm> --bin <output-name> -> compiles to single exe binary with output name.");        
+                println!(" 5. csm init                               -> initializes a new project in current directory.");
+                println!(" 6. csm build                              -> build current directory(project).");
+                println!(" 7. csm run                                -> run current directory(project).");
+            }
+        }else if args.len() == 4{
+            if args[1].ends_with(".csm") && args[2] == "--bin" {
+                dbg!("compiling to binary");    
             }
         }
-    }
+    
 }
