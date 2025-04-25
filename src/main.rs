@@ -19,6 +19,9 @@ fn main() {
                 println!(" 4. csm init                               -> initializes a new project in current directory.");
                 println!(" 5. csm build                              -> build current directory(project).");
                 println!(" 6. csm run                                -> run current directory(project).");
+            }else if &args[1] == "init" {
+                println!("csm: initializing a new project in current directory.");
+                
             }
         }
     
