@@ -16,14 +16,9 @@ fn main() {
                 println!(" 1. csm <no args>                          -> prints about message.");
                 println!(" 2. csm --version                          -> prints csm version.");
                 println!(" 3. csm --help                             -> prints this commands list.");
-                println!(" 4. csm <filename.csm> --bin <output-name> -> compiles to single exe binary with output name.");        
-                println!(" 5. csm init                               -> initializes a new project in current directory.");
-                println!(" 6. csm build                              -> build current directory(project).");
-                println!(" 7. csm run                                -> run current directory(project).");
-            }
-        }else if args.len() == 4{
-            if args[1].ends_with(".csm") && args[2] == "--bin" {
-                dbg!("compiling to binary");    
+                println!(" 4. csm init                               -> initializes a new project in current directory.");
+                println!(" 5. csm build                              -> build current directory(project).");
+                println!(" 6. csm run                                -> run current directory(project).");
             }
         }
     
